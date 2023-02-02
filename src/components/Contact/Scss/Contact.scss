@@ -1,0 +1,73 @@
+.Contact {
+  .wrapper {
+    overflow: hidden;
+    .body-pass {
+      display: flex;
+      padding: 0 0 2vw 0;
+      align-items: center;
+      justify-content: space-between;
+      .passport {
+        padding: 0vw 5vw;
+        .pass,
+        .passDesc {
+          font-size: 1.2vw;
+          font-family: system-ui;
+          @media (max-width: 1000px) {
+            font-size: 1.4vw;
+          }
+          @media (max-width: 700px) {
+            font-size: 1.7vw;
+          }
+          @media (max-width: 500px) {
+            font-size: 2.5vw;
+          }
+        }
+        .copy-pass {
+          max-width: 25vw;
+          min-width: 25vw;
+          object-fit: cover;
+          padding: 0 1vw;
+          @media (max-width: 700px) {
+            max-width: 35vw;
+            min-width: 35vw;
+          }
+          @media (max-width: 500px) {
+            max-width: 45vw;
+            min-width: 45vw;
+          }
+        }
+        .btn {
+          width: 9vw;
+          border: none;
+          color: #fff;
+          padding: 0.5vw;
+          margin: 0 1vw;
+          border-radius: 50vw;
+          background-color: rgb(15, 68, 24);
+        }
+        .copy-pass2 {
+          max-width: 9vw;
+          min-width: 9vw;
+          object-fit: cover;
+          padding: 0 1vw;
+          @media (max-width: 700px) {
+            max-width: 13vw;
+            min-width: 13vw;
+          }
+          @media (max-width: 500px) {
+            max-width: 17vw;
+            min-width: 17vw;
+          }
+        }
+        @media (max-width: 700px) {
+          padding: 0 3.5vw;
+        }
+      }
+      @media (max-width: 500px) {
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+}

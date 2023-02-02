@@ -1,0 +1,76 @@
+.Header {
+  .wrapper {
+    overflow: hidden;
+    .header {
+      padding: 1vw 5vw;
+      .lorem {
+        font-size: 1vw;
+        text-align: start;
+        padding: 0vw 2vw 1vw;
+        font-family: system-ui;
+        border: 5px solid gray;
+        @media (max-width: 1000px) {
+          font-size: 1.2vw;
+        }
+        @media (max-width: 700px) {
+          font-size: 1.5vw;
+        }
+        @media (max-width: 500px) {
+          font-size: 1.7vw;
+        }
+        .title {
+          margin: 0;
+          padding: 1vw 0 1vw 0;
+          font-size: 1.2vw;
+          text-align: center;
+          @media (max-width: 1000px) {
+            font-size: 1.4vw;
+          }
+          @media (max-width: 700px) {
+            font-size: 1.7vw;
+          }
+          @media (max-width: 500px) {
+            font-size: 2vw;
+          }
+        }
+      }
+      .link {
+        padding: 1vw 0;
+        text-transform: capitalize;
+        a {
+          color: #000;
+          font-size: 1.5vw;
+          font-family: system-ui;
+          @media (max-width: 1000px) {
+            font-size: 1.7vw;
+          }
+          @media (max-width: 700px) {
+            font-size: 2vw;
+          }
+          @media (max-width: 500px) {
+            font-size: 3vw;
+          }
+        }
+      }
+      .check {
+        padding: 1vw 0;
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+        .ofertaText {
+          font-size: 1.2vw;
+          font-family: system-ui;
+          @media (max-width: 1000px) {
+            font-size: 1.5vw;
+          }
+          @media (max-width: 700px) {
+            font-size: 2vw;
+          }
+          @media (max-width: 500px) {
+            font-size: 3.5vw;
+          }
+        }
+      }
+    }
+  }
+}
