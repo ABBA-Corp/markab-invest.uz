@@ -1,0 +1,42 @@
+name: Markab-invest.uz deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: GIT pulling from github repository
+      uses: appleboy/scp-action@master
+      env:
+        HOST: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      with:
+        source: "."
+        target: "/home/front/markab-invest.uz"
+
+    - name: Command using from script
+      uses: appleboy/ssh-action@master
+      env:
+        DISABLE_ESLINT_PLUGIN: "true"
+      with:
+        host: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        envs: DISABLE_ESLINT_PLUGIN
+        script_stop: true
+        script: |
+          git --work-tree=/home/front/markab-invest.uz --git-dir=/home/front/markab-invest.uz/.git clean -f .
+          npm --prefix /home/front/markab-invest.uz/ install /home/front/markab-invest.uz/
+          npm --prefix /home/front/markab-invest.uz/ run build
+          sh /home/devops/markab_front.sh "${{ github.event.head_commit.message }}"
